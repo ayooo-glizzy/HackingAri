@@ -1,4 +1,4 @@
-import colorama
+﻿import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 from time import sleep
