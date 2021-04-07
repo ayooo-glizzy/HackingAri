@@ -84,7 +84,7 @@ def menu():
    {3} ~ Facebook
    {0} ~ Exit
  """)
-    choice = raw_input("SomeFakeShit~# ")
+    choice = input("SomeFakeShit~# ")
     if choice == "1":
         Dis()
     elif choice == "0":
