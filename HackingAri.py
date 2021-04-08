@@ -215,6 +215,10 @@ def supstart():
     sleep(2)
     global fairchoiceterm
     fairchoiceterm = input(Fore.CYAN + "Do you agree to use educationally? Y/N: ")
+    if os.name == 'posix':
+        termuse()
+    else:
+        winuse()
 
 def winstart():
     print(warning + Fore.CYAN + "PLEASE REPORT ANY BUGS TO ME PERSONALLY Alt+F4#0999")
