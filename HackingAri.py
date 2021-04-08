@@ -174,7 +174,7 @@ def Dis2():
     print (dislogo + Fore.LIGHTYELLOW_EX + "Checking for Accounts associated with: " + choicedis + "...")
     sleep(2)
     screen_clear()
-    print (dislogo + Fore.GREEN + "Account Found, Account is: ursoftgirlfriend#8035")
+    print (dislogo + Fore.GREEN + "Account Found, Account is: Alt+F4#0999 {Add me ;)}")
     sleep(3)
     screen_clear()
     print (dislogo + Fore.LIGHTYELLOW_EX + "Checking for Password.")
