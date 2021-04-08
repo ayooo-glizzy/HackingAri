@@ -98,13 +98,15 @@ fairuse = Fore.RED + """
             ╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝╚══════╝
 """
 
+termuxlogo = Fore.RED + """
+╦ ╦╔═╗╦═╗╔╗╔╦╔╗╔╔═╗
+║║║╠═╣╠╦╝║║║║║║║║ ╦
+╚╩╝╩ ╩╩╚═╝╚╝╩╝╚╝╚═╝
+"""
 
 
 
 def start():
-    screen_clear()
-    print(warning + Fore.CYAN + "IF USING THE TOOL ON TERMUX THE HEADERS ARE GONNA LOOK WONKY")
-    sleep(4)
     screen_clear()
     print(logo + Fore.CYAN + "initialize password cracker.")
     sleep(1)
@@ -161,11 +163,31 @@ def start():
     sleep(3)
     screen_clear()
 
-screen_clear()
-print(fairuse + Fore.CYAN + "THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY")
-sleep(2)
-fairchoice = input(Fore.CYAN + "Do you agree to use educationally? Y/N: ")
 
+
+def supstart():
+    print(termuxlogo + Fore.CYAN + "IF USING THE TOOL ON TERMUX THE HEADERS ARE GONNA LOOK WONKY")
+    sleep(4)
+    screen_clear()
+    print(fairuse + Fore.CYAN + "THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY")
+    sleep(2)
+    global fairchoice
+    fairchoice = input(Fore.CYAN + "Do you agree to use educationally? Y/N: ")
+
+def winstart():
+    print(warning + Fore.CYAN + "IF USING THE TOOL ON TERMUX THE HEADERS ARE GONNA LOOK WONKY")
+    sleep(4)
+    screen_clear()
+    print(fairuse + Fore.CYAN + "THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY")
+    sleep(2)
+    global fairchoice
+    fairchoice = input(Fore.CYAN + "Do you agree to use educationally? Y/N: ")
+
+screen_clear()
+if os.name == 'posix':
+      supstart()
+else:
+      winstart()
 if fairchoice in yes:
     screen_clear()
     print(fairuse + Fore.GREEN + "Thank you, Proceeding")
@@ -173,12 +195,14 @@ if fairchoice in yes:
     start()
 if fairchoice in no:
     screen_clear()
-    print(warning + Fore.LIGHTMAGENTA_EX + "WRONG CHOICE, CLOSING")
+    print(warning + Fore.CYAN + "WRONG CHOICE, CLOSING")
     sleep(2)
     screen_clear()
-    print(dislogo + Fore.LIGHTMAGENTA_EX + "ADD ME ON DISCORD BEFORE YOU GO Alt+F4#0999 ;)")
+    print(dislogo + Fore.CYAN + "ADD ME ON DISCORD BEFORE YOU GO Alt+F4#0999 ;)")
     sleep(3)
+    screen_clear()
     exit()
+
 def error():
     screen_clear()
     print(Fore.RED + wrong)
