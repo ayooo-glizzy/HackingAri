@@ -614,7 +614,8 @@ def terminsta():
     termcool7 = "Faggot"
     termcool8 = "Beaner"
     termcool9 = "Wetback"
-    terncool10 = "Spic"
+    termcool10 = "Spic"
+    termcool11 = " "
     global choice3
     print(terminstalogo)
     termchoice3 = input(Fore.CYAN + "Please Enter IG Username: ")
@@ -623,61 +624,67 @@ def terminsta():
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool2 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool3 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool4 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool5 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool6 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool7 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool8 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
     if termcool9 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
-    if terncool10 in termchoice3:
+        terminsta()
+    if termcool10 in termchoice3:
         screen_clear()
         print(terminstalogo + Fore.RED + "This user name contains profanity. Please try another!")
         sleep(3)
         screen_clear()
-        insta()
+        terminsta()
+    if termcool11 in termchoice3:
+        screen_clear()
+        print(terminstalogo + Fore.RED + "Username cannot be blank")
+        sleep(3)
+        screen_clear()
+        terminsta()
     else:
         screen_clear()
         print(terminstalogo + Fore.GREEN + "This user is valid. Proceeding")
