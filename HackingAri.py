@@ -341,7 +341,7 @@ def termDis():
     if termcool in choicedisterm:
        print(Fore.GREEN + "Email Valid Proceeding")
        sleep(2)
-       Dis2()
+       termDis2()
     else:
         screen_clear()
         print(termuxdislogo + Fore.RED + "invalid Email Retard, Try Again")
