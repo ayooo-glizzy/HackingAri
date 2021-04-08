@@ -3,7 +3,7 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 from time import sleep
 import time
-import os
+import os, platform
 import random, string
 rp = random.SystemRandom()
 length = 10
@@ -151,7 +151,9 @@ terminstalogo = Fore.RED + """
 ╩╝╚╝╚═╝ ╩ ╩ ╩╚═╝╩╚═╩ ╩╩ ╩
 """
 
-
+print(platform.system())
+print(platform.release())
+sleep(10)
 
 def start():
     screen_clear()
