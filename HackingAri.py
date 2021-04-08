@@ -63,9 +63,9 @@ logo = Fore.RED + """
             ██╔══██║██╔══██║ ██╔██╗ ██║   ██║██╔══██╗
             ██║  ██║██║  ██║██╔╝ ██╗╚██████╔╝██║  ██║
             ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝
-    ╔═╗┌─┐┌─┐┌─┐┬ ┬┌─┐┬─┐┌┬┐  ╔═╗┬─┐┌─┐┌─┐┬┌─┬┌┐┌┌─┐  ╔╦╗┌─┐┌─┐┬  
-    ╠═╝├─┤└─┐└─┐││││ │├┬┘ ││  ║  ├┬┘├─┤│  ├┴┐│││││ ┬   ║ │ ││ ││  
-    ╩  ┴ ┴└─┘└─┘└┴┘└─┘┴└──┴┘  ╚═╝┴└─┴ ┴└─┘┴ ┴┴┘└┘└─┘   ╩ └─┘└─┘┴─┘
+            ┌─┐┌─┐┌─┐┌─┐┬ ┬┌─┐┬─┐┌┬┐  ┌─┐┬─┐┌─┐┌─┐┬┌─┌─┐┬─┐
+            ├─┘├─┤└─┐└─┐││││ │├┬┘ ││  │  ├┬┘├─┤│  ├┴┐├┤ ├┬┘
+            ┴  ┴ ┴└─┘└─┘└┴┘└─┘┴└──┴┘  └─┘┴└─┴ ┴└─┘┴ ┴└─┘┴└─
 """
 
 wrong = Fore.RED + """
@@ -526,6 +526,29 @@ def update():
         menu()
 
 
+def termmenu():
+    screen_clear()
+    print (termlogo + """
+   {1} ~ Discord
+   {2} ~ Instagram
+   {3} ~ Facebook
+   {4} ~ Update Password Cracker
+   {0} ~ Exit
+ """)
+    choice = input(Fore.CYAN + "PassHaxor~# ")
+    if choice == "1":
+        Dis()
+    elif choice == "0":
+        screen_clear(), exit()
+    elif choice == "2":
+        insta()
+    elif choice == "4":
+        update()
+    elif choice == "":
+        menu()
+    else:
+        error()
+
 def menu():
     screen_clear()
     print (logo + """
@@ -548,5 +571,7 @@ def menu():
         menu()
     else:
         error()
-menu()
-
+if os.name == 'posix':
+      termmenu()
+else:
+      menu()
