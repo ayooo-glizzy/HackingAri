@@ -616,7 +616,7 @@ def terminsta():
     termcool9 = "Wetback"
     termcool10 = "Spic"
     termcool11 = " "
-    global choice3
+    global termchoice3
     print(terminstalogo)
     termchoice3 = input(Fore.CYAN + "Please Enter IG Username: ")
     if termcool in termchoice3:
