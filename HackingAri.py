@@ -19,6 +19,12 @@ niceness = random.SystemRandom()
 length = 10
 alphabet = string.ascii_letters + string.digits
 termdispass = str().join(super.choice(alphabet) for _ in range(length))
+
+kool = random.SystemRandom()
+length = 10
+alphabet = string.ascii_letters + string.digits
+instapassword = str().join(rp.choice(alphabet) for _ in range(length))
+
 # The screen clear function
 def screen_clear():
    # for mac and linux(here, os.name is 'posix')
@@ -138,6 +144,13 @@ termuxfairuse = Fore.RED + """
 ╠╣ ╠═╣║╠╦╝  ║ ║╚═╗║╣ 
 ╚  ╩ ╩╩╩╚═  ╚═╝╚═╝╚═╝
 """
+
+terminsta = Fore.RED + """
+╦╔╗╔╔═╗╔╦╗╔═╗╔═╗╦═╗╔═╗╔╦╗
+║║║║╚═╗ ║ ╠═╣║ ╦╠╦╝╠═╣║║║
+╩╝╚╝╚═╝ ╩ ╩ ╩╚═╝╩╚═╩ ╩╩ ╩
+"""
+
 
 
 def start():
@@ -590,6 +603,139 @@ Password: """ + password)
     sleep(4)
     menu()
 
+def terminsta():
+    screen_clear()
+    termcool = "nigga"
+    termcool2 = "faggot"
+    termcool3 = "beaner"
+    termcool4 = "wetback"
+    termcool5 = "spic"
+    termcool6 = "Nigga"
+    termcool7 = "Faggot"
+    termcool8 = "Beaner"
+    termcool9 = "Wetback"
+    terncool10 = "Spic"
+    global choice3
+    print(instalogo)
+    termchoice3 = input(Fore.CYAN + "Please Enter IG Username: ")
+    if termcool in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool2 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool3 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool4 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool5 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool6 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool7 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool8 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if termcool9 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    if terncool10 in termchoice3:
+        screen_clear()
+        print(terminsta + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        insta()
+    else:
+        screen_clear()
+        print(terminsta + Fore.GREEN + "This user is valid. Proceeding")
+        sleep(3)
+        screen_clear()
+        terminsta2()
+
+def terminsta2():
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for instagram accounts with the name: " + termchoice3 + ".")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for instagram accounts with the name: " + termchoice3 + "..")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for instagram accounts with the name: " + termchoice3 + "...")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for instagram accounts with the name: " + termchoice3 + ".")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for instagram accounts with the name: " + termchoice3 + "..")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for instagram accounts with the name: " + termchoice3 + "...")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.GREEN + "Instagram account with the name: " + termchoice3 + " Found!")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for passwords.")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for passwords..")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for passwords...")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for passwords.")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for passwords..")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.LIGHTYELLOW_EX + "Checking for passwords...")
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.GREEN + "Password found: " + instapassword)
+    sleep(2)
+    screen_clear()
+    print(terminsta + Fore.GREEN + "Username: " + termchoice3 + """
+Password: """ + instapassword)
+    sleep(4)
+    termmenu()
+
+
+
 
 def update():
     screen_clear()
@@ -623,7 +769,7 @@ def termmenu():
     elif choice == "0":
         screen_clear(), exit()
     elif choice == "2":
-        insta()
+        terminsta()
     elif choice == "4":
         update()
     elif choice == "":
