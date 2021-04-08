@@ -380,7 +380,7 @@ def termDis2():
     print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password...")
     sleep(2)
     screen_clear()
-    print (distermuxdislogologo + Fore.LIGHTYELLOW_EX + "Checking for Password.")
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password.")
     sleep(2)
     screen_clear()
     print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password..")
