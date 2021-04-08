@@ -98,12 +98,23 @@ fairuse = Fore.RED + """
             ╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝╚══════╝
 """
 
-termuxlogo = Fore.RED + """
+termuxwarning = Fore.RED + """
 ╦ ╦╔═╗╦═╗╔╗╔╦╔╗╔╔═╗
 ║║║╠═╣╠╦╝║║║║║║║║ ╦
 ╚╩╝╩ ╩╩╚═╝╚╝╩╝╚╝╚═╝
 """
 
+termuxdislogo = Fore.RED + """
+╔╦╗╦╔═╗╔═╗╔═╗╦═╗╔╦╗
+ ║║║╚═╗║  ║ ║╠╦╝ ║║
+═╩╝╩╚═╝╚═╝╚═╝╩╚══╩╝
+"""
+
+termuxfairuse = Fore.RED + """
+╔═╗╔═╗╦╦═╗  ╦ ╦╔═╗╔═╗
+╠╣ ╠═╣║╠╦╝  ║ ║╚═╗║╣ 
+╚  ╩ ╩╩╩╚═  ╚═╝╚═╝╚═╝
+"""
 
 
 def start():
@@ -166,16 +177,16 @@ def start():
 
 
 def supstart():
-    print(termuxlogo + Fore.CYAN + "IF USING THE TOOL ON TERMUX THE HEADERS ARE GONNA LOOK WONKY")
+    print(termuxwarning + Fore.CYAN + "PLEASE REPORT ANY BUGS TO ME PERSONALLY Alt+F4#0999")
     sleep(4)
     screen_clear()
-    print(fairuse + Fore.CYAN + "THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY")
+    print(termuxfairuse + Fore.CYAN + "THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY")
     sleep(2)
-    global fairchoice
-    fairchoice = input(Fore.CYAN + "Do you agree to use educationally? Y/N: ")
+    global fairchoiceterm
+    fairchoiceterm = input(Fore.CYAN + "Do you agree to use educationally? Y/N: ")
 
 def winstart():
-    print(warning + Fore.CYAN + "IF USING THE TOOL ON TERMUX THE HEADERS ARE GONNA LOOK WONKY")
+    print(warning + Fore.CYAN + "PLEASE REPORT ANY BUGS TO ME PERSONALLY Alt+F4#0999")
     sleep(4)
     screen_clear()
     print(fairuse + Fore.CYAN + "THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY")
@@ -188,20 +199,37 @@ if os.name == 'posix':
       supstart()
 else:
       winstart()
+
+
 if fairchoice in yes:
-    screen_clear()
-    print(fairuse + Fore.GREEN + "Thank you, Proceeding")
-    sleep(2)
-    start()
+        screen_clear()
+        print(fairuse + Fore.GREEN + "Thank you, Proceeding")
+        sleep(2)
+        start()
 if fairchoice in no:
-    screen_clear()
-    print(warning + Fore.CYAN + "WRONG CHOICE, CLOSING")
-    sleep(2)
-    screen_clear()
-    print(dislogo + Fore.CYAN + "ADD ME ON DISCORD BEFORE YOU GO Alt+F4#0999 ;)")
-    sleep(3)
-    screen_clear()
-    exit()
+        screen_clear()
+        print(warning + Fore.CYAN + "WRONG CHOICE, CLOSING")
+        sleep(2)
+        screen_clear()
+        print(dislogo + Fore.CYAN + "ADD ME ON DISCORD BEFORE YOU GO Alt+F4#0999 ;)")
+        sleep(3)
+        screen_clear()
+        exit()
+
+if fairchoiceterm in yes:
+        screen_clear()
+        print(termuxfairuse + Fore.GREEN + "Thank you, Proceeding")
+        sleep(2)
+        start()
+if fairchoiceterm in no:
+        screen_clear()
+        print(termuxwarning + Fore.CYAN + "WRONG CHOICE, CLOSING")
+        sleep(2)
+        screen_clear()
+        print(termuxdislogo + Fore.CYAN + "ADD ME ON DISCORD BEFORE YOU GO Alt+F4#0999 ;)")
+        sleep(3)
+        screen_clear()
+        exit()
 
 def error():
     screen_clear()
