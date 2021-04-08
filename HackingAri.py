@@ -15,6 +15,10 @@ length = 10
 alphabet = string.ascii_letters + string.digits
 dispass = str().join(super.choice(alphabet) for _ in range(length))
 
+niceness = random.SystemRandom()
+length = 10
+alphabet = string.ascii_letters + string.digits
+termdispass = str().join(super.choice(alphabet) for _ in range(length))
 # The screen clear function
 def screen_clear():
    # for mac and linux(here, os.name is 'posix')
@@ -79,6 +83,16 @@ wrong = Fore.RED + """
                                      ║  ├─┤│ ││ │└─┐├┤   ╠═╣││││ │ │ ├─┤├┤ ├┬┘
                                      ╚═╝┴ ┴└─┘└─┘└─┘└─┘  ╩ ╩┘└┘└─┘ ┴ ┴ ┴└─┘┴└
 """
+
+termwrong = Fore.RED + """
+╦╔╗╔╦  ╦╔═╗╦  ╦╔╦╗  ╔═╗╔═╗╔╦╗╦╔═╗╔╗╔     
+║║║║╚╗╔╝╠═╣║  ║ ║║  ║ ║╠═╝ ║ ║║ ║║║║     
+╩╝╚╝ ╚╝ ╩ ╩╩═╝╩═╩╝  ╚═╝╩   ╩ ╩╚═╝╝╚╝     
+┌─┐┬ ┬┌─┐┌─┐┌─┐┌─┐  ┌─┐┌┐┌┌─┐┌┬┐┬ ┬┌─┐┬─┐
+│  ├─┤│ ││ │└─┐├┤   ├─┤││││ │ │ ├─┤├┤ ├┬┘
+└─┘┴ ┴└─┘└─┘└─┘└─┘  ┴ ┴┘└┘└─┘ ┴ ┴ ┴└─┘┴└─
+"""
+
 
 dislogo = Fore.RED + """ 
             ██████╗ ██╗███████╗ ██████╗ ██████╗ ██████╗ ██████╗ 
@@ -305,6 +319,12 @@ if os.name == 'posix':
 else:
       winstart()
 
+def termerror():
+    screen_clear()
+    print(Fore.RED + termwrong)
+    sleep(5)
+    screen_clear()
+    termmenu()
 
 def error():
     screen_clear()
@@ -313,6 +333,68 @@ def error():
     screen_clear()
     menu()
 
+def termDis():
+    screen_clear()
+    termcool = "@gmail.com"
+    global choicedisterm
+    choicedisterm = input(termuxdislogo + Fore.CYAN + "Please Enter Email: ")
+    if termcool in choicedisterm:
+       print(Fore.GREEN + "Email Valid Proceeding")
+       sleep(2)
+       Dis2()
+    else:
+        screen_clear()
+        print(termuxdislogo + Fore.RED + "invalid Email Retard, Try Again")
+        sleep(2)
+        termDis()
+        
+def termDis2():
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Accounts associated with: " + choicedisterm + ".")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Accounts associated with: " + choicedisterm + "..")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Accounts associated with: " + choicedisterm + "...")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Accounts associated with: " + choicedisterm + ".")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Accounts associated with: " + choicedisterm + "..")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Accounts associated with: " + choicedisterm + "...")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.GREEN + "Account Found, Account is: Alt+F4#0999 {Add me ;)}")
+    sleep(3)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password.")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password..")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password...")
+    sleep(2)
+    screen_clear()
+    print (distermuxdislogologo + Fore.LIGHTYELLOW_EX + "Checking for Password.")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password..")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.LIGHTYELLOW_EX + "Checking for Password...")
+    sleep(2)
+    screen_clear()
+    print (termuxdislogo + Fore.GREEN + "Done password successfully cracked")
+    sleep(1)
+    screen_clear()
+    print (termuxdislogo + Fore.GREEN + "Password is: " + termdispass)
+    sleep(3)
+    termmenu()
 
 def Dis():
     screen_clear()
@@ -537,7 +619,7 @@ def termmenu():
  """)
     choice = input(Fore.CYAN + "PassHaxor~# ")
     if choice == "1":
-        Dis()
+        termDis()
     elif choice == "0":
         screen_clear(), exit()
     elif choice == "2":
@@ -547,7 +629,7 @@ def termmenu():
     elif choice == "":
         menu()
     else:
-        error()
+        termerror()
 
 def menu():
     screen_clear()
