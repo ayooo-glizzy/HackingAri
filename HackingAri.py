@@ -9,6 +9,12 @@ rp = random.SystemRandom()
 length = 10
 alphabet = string.ascii_letters + string.digits
 password = str().join(rp.choice(alphabet) for _ in range(length))
+
+super = random.SystemRandom()
+length = 10
+alphabet = string.ascii_letters + string.digits
+dispass = str().join(super.choice(alphabet) for _ in range(length))
+
 # The screen clear function
 def screen_clear():
    # for mac and linux(here, os.name is 'posix')
@@ -74,70 +80,112 @@ dislogo = Fore.RED + """
             ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ 
 """
 
+warning = Fore.RED + """
+            ██╗    ██╗ █████╗ ██████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗ 
+            ██║    ██║██╔══██╗██╔══██╗████╗  ██║██║████╗  ██║██╔════╝ 
+            ██║ █╗ ██║███████║██████╔╝██╔██╗ ██║██║██╔██╗ ██║██║  ███╗
+            ██║███╗██║██╔══██║██╔══██╗██║╚██╗██║██║██║╚██╗██║██║   ██║
+            ╚███╔███╔╝██║  ██║██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝
+            ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+"""
+
+fairuse = Fore.RED + """
+            ███████╗ █████╗ ██╗██████╗     ██╗   ██╗███████╗███████╗
+            ██╔════╝██╔══██╗██║██╔══██╗    ██║   ██║██╔════╝██╔════╝
+            █████╗  ███████║██║██████╔╝    ██║   ██║███████╗█████╗  
+            ██╔══╝  ██╔══██║██║██╔══██╗    ██║   ██║╚════██║██╔══╝  
+            ██║     ██║  ██║██║██║  ██║    ╚██████╔╝███████║███████╗
+            ╚═╝     ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝╚══════╝
+"""
 
 
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker.")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker..")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker...")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker.")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker..")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker...")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker.")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker..")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "initialize password cracker...")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack \ ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack | ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack / ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack - ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack \ ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack | ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack / ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack - ")
-sleep(1)
-screen_clear()
-print(logo + Fore.CYAN + "Loading Ncrack \ ")
-sleep(3)
-screen_clear()
 
+
+def start():
+    screen_clear()
+    print(warning + Fore.CYAN + "IF USING THE TOOL ON TERMUX THE HEADERS ARE GONNA LOOK WONKY")
+    sleep(4)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker.")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker..")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker...")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker.")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker..")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker...")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker.")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker..")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "initialize password cracker...")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack \ ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack | ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack / ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack - ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack \ ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack | ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack / ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack - ")
+    sleep(1)
+    screen_clear()
+    print(logo + Fore.CYAN + "Loading Ncrack \ ")
+    sleep(3)
+    screen_clear()
+
+screen_clear()
+print(fairuse + Fore.CYAN + "THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY")
+sleep(2)
+fairchoice = input(Fore.CYAN + "Do you agree to use educationally? Y/N: ")
+
+if fairchoice in yes:
+    screen_clear()
+    print(fairuse + Fore.GREEN + "Thank you, Proceeding")
+    sleep(2)
+    start()
+if fairchoice in no:
+    screen_clear()
+    print(warning + Fore.LIGHTMAGENTA_EX + "WRONG CHOICE, CLOSING")
+    sleep(2)
+    screen_clear()
+    print(dislogo + Fore.LIGHTMAGENTA_EX + "ADD ME ON DISCORD BEFORE YOU GO Alt+F4#0999 ;)")
+    sleep(3)
+    exit()
 def error():
     screen_clear()
     print(Fore.RED + wrong)
     sleep(5)
     screen_clear()
     menu()
+
 
 def Dis():
     screen_clear()
@@ -198,7 +246,7 @@ def Dis2():
     print (dislogo + Fore.GREEN + "Done password successfully cracked")
     sleep(1)
     screen_clear()
-    print (dislogo + Fore.GREEN + "Password is: Matthew0101")
+    print (dislogo + Fore.GREEN + "Password is: " + dispass)
     sleep(3)
     menu()
 
