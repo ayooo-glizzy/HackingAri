@@ -616,7 +616,7 @@ def terminsta():
     termcool9 = "Wetback"
     terncool10 = "Spic"
     global choice3
-    print(instalogo)
+    print(terminsta)
     termchoice3 = input(Fore.CYAN + "Please Enter IG Username: ")
     if termcool in termchoice3:
         screen_clear()
