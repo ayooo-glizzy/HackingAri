@@ -46,6 +46,15 @@ instalogo = Fore.RED + """
 """
 
 
+termlogo = Fore.RED + """
+╦ ╦╔═╗═╗ ╦╔═╗╦═╗                               
+╠═╣╠═╣╔╩╦╝║ ║╠╦╝                               
+╩ ╩╩ ╩╩ ╚═╚═╝╩╚═                               
+┌─┐┌─┐┌─┐┌─┐┬ ┬┌─┐┬─┐┌┬┐  ┌─┐┬─┐┌─┐┌─┐┬┌─┌─┐┬─┐
+├─┘├─┤└─┐└─┐││││ │├┬┘ ││  │  ├┬┘├─┤│  ├┴┐├┤ ├┬┘
+┴  ┴ ┴└─┘└─┘└┴┘└─┘┴└──┴┘  └─┘┴└─┴ ┴└─┘┴ ┴└─┘┴└─
+"""
+
 
 logo = Fore.RED + """    
             ██╗  ██╗ █████╗ ██╗  ██╗ ██████╗ ██████╗ 
@@ -174,6 +183,63 @@ def start():
     sleep(3)
     screen_clear()
 
+def termstart():
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker.")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker..")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker...")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker.")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker..")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker...")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker.")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker..")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "initialize password cracker...")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack \ ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack | ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack / ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack - ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack \ ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack | ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack / ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack - ")
+    sleep(1)
+    screen_clear()
+    print(termlogo + Fore.CYAN + "Loading Ncrack \ ")
+    sleep(3)
+    screen_clear()
+
 def winuse():
     if fairchoice in yes:
             screen_clear()
@@ -195,7 +261,7 @@ def termuse():
             screen_clear()
             print(termuxfairuse + Fore.GREEN + "Thank you, Proceeding")
             sleep(2)
-            start()
+            termstart()
     if fairchoiceterm in no:
             screen_clear()
             print(termuxwarning + Fore.CYAN + "WRONG CHOICE, CLOSING")
