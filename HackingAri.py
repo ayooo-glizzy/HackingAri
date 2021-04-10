@@ -805,7 +805,7 @@ def update():
         screen_clear()
         print(uplogo + Fore.RED + "The Password Cracker was not updated")
         sleep(2)
-        menu()
+        termmenu()
 
 def cantthing():
     screen_clear()
