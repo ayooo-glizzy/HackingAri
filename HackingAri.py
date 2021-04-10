@@ -794,7 +794,7 @@ Password: """ + instapassword)
 def update():
     screen_clear()
     print (uplogo + Fore.LIGHTYELLOW_EX + "This Tool is Only Available for Termux and Similar Systems. ")
-    choiceupdate = input("Continue Y / N: ")
+    choiceupdate = input(Fore.CYAN + "Continue Y / N: ")
     if choiceupdate in yes:
         os.system("cd Desktop")
         os.system("rm -rf HackingAri")
